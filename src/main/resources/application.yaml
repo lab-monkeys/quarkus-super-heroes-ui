@@ -1,0 +1,25 @@
+quarkus:
+  application:
+    name: ui-super-heroes
+  quinoa:
+    package-manager-install: 
+      ~: true
+      node-version: 18.17.1
+    build-dir: dist/super-heroes
+    dev-server:
+      port: 4200
+  http:
+    port: ${UI_HTTP_PORT}
+    cors:
+      ~: true
+      origins: ${CORS_ORIGINS}
+      methods: ${CORS_METHODS}
+      headers: "Content-Type, Accept, X-Requested-With, remember-me"
+      access-control-max-age: "3600"
+      access-control-allow-credentials: true
+  log:
+    level: "INFO"
+    console:
+      enable: true
+      level: "INFO"
+      darken: 1
