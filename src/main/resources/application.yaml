@@ -4,7 +4,7 @@ quarkus:
   quinoa:
     package-manager-install: 
       ~: true
-      node-version: 18.17.1
+      node-version: 16.16.0
     build-dir: dist/super-heroes
     dev-server:
       port: 4200
