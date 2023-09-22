@@ -17,9 +17,18 @@ quarkus:
       headers: "Content-Type, Accept, X-Requested-With, remember-me"
       access-control-max-age: "3600"
       access-control-allow-credentials: true
+  otel:
+    resource:
+      attributes: "app=${quarkus.application.name},application=ui-super-heroes,system=quarkus-super-heroes"
+    exporter:
+      otlp:
+        traces:
+          endpoint: ${OTEL_URL}
   log:
     level: "INFO"
     console:
       enable: true
       level: "INFO"
       darken: 1
+  devservices:
+    enabled: false
